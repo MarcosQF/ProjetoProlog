@@ -13,11 +13,11 @@ def home():
         query = data.get('query', '')
         
         print('nossaaa')
-        resultados = str(prolog.query(query))
+        #resultados = str(prolog.query(query))
         print('nossaaa2222')
+        
 
-
-        return jsonify({'result': resultados})
+        return jsonify({'result': query})
     
     return render_template("home_page.html")
 
