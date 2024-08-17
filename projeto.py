@@ -1,26 +1,22 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, render_template
 from pyswip import Prolog
 
 app = Flask(__name__)
 
+
 prolog = Prolog()
 prolog.consult("prolog_db.pl")
 
-@app.route("/",methods=['GET', 'POST'])
-def home():
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    resultado = None
     if request.method == 'POST':
-        data = request.get_json()
-        query = data.get('query', '')
-        
-        print('nossaaa')
-        #resultados = str(prolog.query(query))
-        print('nossaaa2222')
-        
+        consulta = request.form['consulta']
 
-        return jsonify({'result': query})
-    
-    return render_template("home_page.html")
+        #resultado = list(prolog.query(consulta)) 
+        resultado = {'Nome': 'Whiplash', 'Diretor': 'damien_chazelle', 'Genero': 'drama', 'Ano': 2014}
+
+    return render_template("home_page.html", resultado=resultado)
 
 if __name__ == "__main__":
     app.run(debug=True)
-

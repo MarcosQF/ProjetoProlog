@@ -8,8 +8,9 @@ consulta_maior = list(prolog.query("filme(Nome, Diretor, Genero, Ano)."))
 
 
 if __name__ == "__main__":
-    
-    print(consulta_maior)
+    for x in consulta_maior:
+        print(type(x))
+        print(x)
 
 
   
