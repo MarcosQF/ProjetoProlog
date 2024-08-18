@@ -13,9 +13,11 @@ def index():
     if request.method == 'POST':
         consulta = request.form['consulta']
 
-        #resultado = list(prolog.query(consulta)) 
-        resultado = {'Nome': 'Whiplash', 'Diretor': 'damien_chazelle', 'Genero': 'drama', 'Ano': 2014}
+        resultado = prolog.query(consulta)
 
+        for x in resultado:
+            print(f'resultado: {x}')
+        
     return render_template("home_page.html", resultado=resultado)
 
 if __name__ == "__main__":
