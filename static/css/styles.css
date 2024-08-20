@@ -49,7 +49,7 @@ h2 {
     color: #555;
     text-align: center;
 }
-.result-container {
+.result-container,.exemplos {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
@@ -58,3 +58,4 @@ h2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
+

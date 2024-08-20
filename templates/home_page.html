@@ -14,9 +14,16 @@
     </form>
     {% if resultado is not none %}
     <div class="result-container">
-        <h2>Resultado:</h2>
-        <p>{{ resultado }}</p>
+        
+            {{ resultado }}
+        
     </div>
     {% endif %}
+
+    <div class= "exemplos">
+        <p>exemplo 1: filme(Nome, Diretor, Genero, Ano) </p>
+        <p>exemplo 2: filme('The Dark Knight', Diretor, Genero, Ano) </p>
+        <p>exemplo 3: filme(Nome, james_cameron, Genero, Ano) </p>
+    </div> 
 </body>
 </html>
