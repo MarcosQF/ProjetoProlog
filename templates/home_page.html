@@ -14,9 +14,9 @@
     </form>
     {% if resultado is not none %}
     <div class="result-container">
-        
-            {{ resultado }}
-        
+        {% for item in resultado %}
+            <p>{{ item }}</p>
+        {% endfor %} 
     </div>
     {% endif %}
 

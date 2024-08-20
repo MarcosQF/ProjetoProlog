@@ -7,7 +7,8 @@ prolog = Prolog()
 prolog.consult("prolog_db.pl")
 
 #testes
-print(list(prolog.query("filme('The Dark Knight', Diretor, Genero, Ano)")))
+query_test = list(prolog.query("filme(Nome, james_cameron, Genero, Ano)"))
+print(query_test)
 
 @app.route('/', methods=['GET', 'POST'])
 def home_page():
@@ -17,7 +18,8 @@ def home_page():
         print(type({consulta}))
         print(consulta)
 
-        resultado = consulta
+        resultado = query_test
+        #resultado = consulta
         #resultado = list(prolog.query(consulta))
        
     return render_template("home_page.html", resultado=resultado)
